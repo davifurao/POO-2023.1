@@ -1,14 +1,35 @@
 #pagina-total{
     text-align: center;
     margin: auto;
-    width: 1920px;
-    
-    
+    width: 1000px;
+    border: 1px ;   
 }
-
-
-
+#sumario{
+    border: 1px ;
+    margin:auto;
+    width: 450px;
+    position: fixed;
+    text-align: left;
+    border:4px solid red ;
+    border-radius: 6px;
+}
+#referencias{
+text-align: center;
+}
+#sumarioCentralizado{
+text-align: center;
+}
 body{
-    background-color: azure
+    background-color: azure;
+    margin: 0%;
 }
+a{
+    color: red;
+    text-decoration: none;
+    transition: blue 1s;
+}
+li{
+color:red;
+opacity: 0.8;
 
+}
