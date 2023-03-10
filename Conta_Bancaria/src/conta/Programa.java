@@ -1,3 +1,6 @@
+//Autor: Davi Souza de Luna
+//Objetivo: aplicação das classes implementadas para aprendizado da disciplina de POO
+
 package conta;
 
 public class Programa {
@@ -15,6 +18,8 @@ public class Programa {
 		contaDavi.realizarTransferencia(50, contaAmanda);
 		System.out.println(contaDavi.toString());
 		System.out.println(contaAmanda.toString());
+		
+		
 		
 		System.out.println(contaAmanda.getContador());
 		

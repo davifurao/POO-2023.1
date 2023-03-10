@@ -1,3 +1,6 @@
+//Autor: Davi Souza de Luna
+//Objetivo: aprendizado em relação à utilização de classes, a partir de um exemplo de uma implementação de uma Conta bancária np ramo de orientação à objetos
+
 package conta;
 
 public class Conta {
