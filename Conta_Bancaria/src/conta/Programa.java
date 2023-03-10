@@ -16,6 +16,8 @@ public class Programa {
 		System.out.println(contaDavi.toString());
 		System.out.println(contaAmanda.toString());
 		
+		System.out.println(contaAmanda.getContador());
+		
 	}
 
 }

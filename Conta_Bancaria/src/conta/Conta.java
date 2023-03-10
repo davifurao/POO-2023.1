@@ -6,12 +6,14 @@ public class Conta {
 	String numeroConta;
 	float saldo;
 	boolean status;
+	private static int CONTADOR=0;
 	
 	public Conta(String nomeProprietario,String numeroConta) {
 		this.nomeProprietario=nomeProprietario;
 		this.numeroConta=numeroConta;
 		this.saldo=0f;
 		this.status=true;
+		CONTADOR++;
 	}
 	
 	public void desativarConta() {
@@ -46,5 +48,9 @@ public class Conta {
 			saldo-=quantia;
 			System.out.println("Foi sacado: "+quantia+" reais");
 		}
+	}
+	
+	public static int getContador() {
+		return CONTADOR;
 	}
 }
