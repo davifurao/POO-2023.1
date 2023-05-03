@@ -1,34 +1,42 @@
+package heranca;
+
+
 import java.time.LocalDateTime;
-import java.util.Objects;
+import java.util.Objects; 
 
 public abstract class Paciente {
-	private String CPF;
-	protected LocalDateTime data;
+
 	private String nome;
-	private float altura;
-	private float peso;
-	private int idade;
+	private String cpf;
+	private LocalDateTime data;
 	private float imc;
+	private float peso;
+	private float altura;
+	private int idade;
 	
-	public Paciente(String CPF, String nome, float altura, float peso,int idade, LocalDateTime data){
-		this.CPF=CPF;
+	
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public Paciente(String nome,String cpf,String numeroConta, LocalDateTime data,float imc,float peso,float altura) {
 		this.nome=nome;
+		this.cpf=cpf;
+		this.data=LocalDateTime.now();
 		this.altura=altura;
 		this.peso=peso;
-		this.idade=idade;
 		this.imc=calcularIMC();
-		this.setData(LocalDateTime.now());
 	}
 	
 	public float calcularIMC() {
-		return peso/(altura*altura);
+		return this.peso/(this.altura*this.altura);
 	}
 	
 	public abstract float calcularMetabolismoBasal();
-
+	 
 	@Override
 	public int hashCode() {
-		return Objects.hash(CPF);
+		return Objects.hash(cpf);
 	}
 
 	@Override
@@ -40,18 +48,14 @@ public abstract class Paciente {
 		if (getClass() != obj.getClass())
 			return false;
 		Paciente other = (Paciente) obj;
-		return Objects.equals(CPF, other.CPF);
+		return Objects.equals(cpf, other.cpf);
 	}
 
+	
 	@Override
-	public abstract String toString();
-
-	public String getCPF() {
-		return CPF;
-	}
-
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public String toString() {
+		return "Paciente [nome=" + nome + ", cpf=" + cpf + ", data=" + data + ", imc=" + imc + ", peso=" + peso
+				+ ", altura=" + altura + ", idade=" + idade + "]";
 	}
 
 	public String getNome() {
@@ -62,28 +66,20 @@ public abstract class Paciente {
 		this.nome = nome;
 	}
 
-	public float getAltura() {
-		return altura;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setAltura(float altura) {
-		this.altura = altura;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public float getPeso() {
-		return peso;
+	public LocalDateTime getData() {
+		return data;
 	}
 
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setData(LocalDateTime data) {
+		this.data = data;
 	}
 
 	public float getImc() {
@@ -94,15 +90,26 @@ public abstract class Paciente {
 		this.imc = imc;
 	}
 
-	public LocalDateTime getData() {
-		return data;
+	public float getPeso() {
+		return peso;
 	}
 
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	} 
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	public float getAltura() {
+		return altura;
+	}
+
+	public void setAltura(float altura) {
+		this.altura = altura;
+	}
 	
-	
+	public int getIdade() {
+		return idade;
+	}
+
 	
 	
 }

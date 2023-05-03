@@ -1,12 +1,16 @@
+package heranca;
+
 import java.time.LocalDateTime;
 
 public class PacienteFeminino extends Paciente {
 
-	public PacienteFeminino(String CPF, String nome, float altura, float peso, int idade, LocalDateTime data) {
-		super(CPF, nome, altura, peso, idade, data);
+	public PacienteFeminino(String nome, String cpf, String numeroConta, LocalDateTime data, float imc, float peso,
+			float altura) {
+		super(nome, cpf, numeroConta, data, imc, peso, altura);
+		
 	}
 
-	//método específico dessa classe
+	
 	public float calcularMetabolismoBasal() {
 		if(super.getIdade()>0 && super.getIdade() <=3) {
 			return (61*super.getPeso())-51;
@@ -26,16 +30,6 @@ public class PacienteFeminino extends Paciente {
 		else {
 			return (float)(10.5*super.getPeso())+596;
 		}
-		
 	}
 
-	
-	public String toString() {
-		return "[ CPF: "+super.getCPF()+", nome: "+super.getNome()+", altura: "+super.getAltura()+", peso: "+super.getIdade()+",data: "+super.data+"]";
-	}
-	
-	//Obs: O toString está sendo reescrito novamente, pois o método toString na classe pai está com o método abstract e 
-	//o método toString deve ser reescrito, pois, no constrtor, pode aparecer um atributo diferente.
-	
-	
 }
